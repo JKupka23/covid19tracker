@@ -3,7 +3,7 @@ body
     background-color: rgb(25,25,100);
 }
 
-h1
+.title
 {
     color: white;
     font-family: Constantia;
