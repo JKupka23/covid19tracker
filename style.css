@@ -1,4 +1,14 @@
-body {background-color: powderblue}
+body {
+    background-color: rgb(25,25,100)
+}
+
+h1 {
+    color: white;
+    font-family: Constantia;
+    text-decoration: underline overline;
+    margin-top: 25px;
+    margin-left: 15px;
+}
 
 #map{
     height:700px;
