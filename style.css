@@ -1,20 +1,32 @@
 body
 {
-    background-color: rgb(25,25,100);
+    background-color: #003399;
+
 }
 
 .title
 {
     color: white;
-    font-family: Constantia;
+    font-family: Barlow;
     text-decoration: underline overline;
     margin-top: 15px;
     margin-left: 10px;
     margin-bottom: 15px;
 }
 
+#positive
+{
+  color:red;
+  margin-top: 40px;
+  margin-left: 10px;
+
+}
+
 #map
 {
-    height:700px;
-    width:100%;
+    position: relative;
+    left:25%;
+    top:100px;
+    height:400px;
+    width:50%;
 }

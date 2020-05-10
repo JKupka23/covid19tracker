@@ -1,105 +1,27 @@
 function initMap(){
-    // Map options (options1 is just for fun)
-    var options1 = {
-      zoom:5,
-      center:{lat:39.8283,lng:-98.5795},
-      styles: [
-      {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
-      {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
-      {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
-      {
-        featureType: 'administrative.locality',
-        elementType: 'labels.text.fill',
-        stylers: [{color: '#d59563'}]
-      },
-      {
-        featureType: 'poi',
-        elementType: 'labels.text.fill',
-        stylers: [{color: '#d59563'}]
-      },
-      {
-        featureType: 'poi.park',
-        elementType: 'geometry',
-        stylers: [{color: '#263c3f'}]
-      },
-      {
-        featureType: 'poi.park',
-        elementType: 'labels.text.fill',
-        stylers: [{color: '#6b9a76'}]
-      },
-      {
-        featureType: 'road',
-        elementType: 'geometry',
-        stylers: [{color: '#38414e'}]
-      },
-      {
-        featureType: 'road',
-        elementType: 'geometry.stroke',
-        stylers: [{color: '#212a37'}]
-      },
-      {
-        featureType: 'road',
-        elementType: 'labels.text.fill',
-        stylers: [{color: '#9ca5b3'}]
-      },
-      {
-        featureType: 'road.highway',
-        elementType: 'geometry',
-        stylers: [{color: '#746855'}]
-      },
-      {
-        featureType: 'road.highway',
-        elementType: 'geometry.stroke',
-        stylers: [{color: '#1f2835'}]
-      },
-      {
-        featureType: 'road.highway',
-        elementType: 'labels.text.fill',
-        stylers: [{color: '#f3d19c'}]
-      },
-      {
-        featureType: 'transit',
-        elementType: 'geometry',
-        stylers: [{color: '#2f3948'}]
-      },
-      {
-        featureType: 'transit.station',
-        elementType: 'labels.text.fill',
-        stylers: [{color: '#d59563'}]
-      },
-      {
-        featureType: 'poi.medical',
-        elementType: 'labels.text.fill',
-        stylers: [{color: '#ff5050'}]
-      },
-      {
-        featureType: 'water',
-        elementType: 'geometry',
-        stylers: [{color: '#17263c'}]
-      },
-      {
-        featureType: 'water',
-        elementType: 'labels.text.fill',
-        stylers: [{color: '#515c6d'}]
-      },
-      {
-        featureType: 'water',
-        elementType: 'labels.text.stroke',
-        stylers: [{color: '#17263c'}]
-      }
-    ]
-  }
-    var options = {
-      zoom:5,
+    var plain = {
+      zoom:3,
       center:{lat:39.8283,lng:-98.5795}
     }
     // New map
-    var map = new google.maps.Map(document.getElementById('map'), options);
+    var map = new google.maps.Map(document.getElementById('map'), plain);
     const api_url = 'https://covidtracking.com/api/states';
     fetch(api_url)
       .then(response => response.json())
       .then(data => {
         console.log(data);
+        var positiveSum = 0;
+        var recoveredSum = 0;
+        var totalDeaths = 0;
+        for (var i=0; i<50; i++) {
+          positiveSum += data[i].positive;
+          recoveredSum += data[i].recovered;
+          totalDeaths += data[i].death;
+        }
+        document.getElementById("positive").innerHTML = positiveSum;
+        console.log(positiveSum);
+        console.log(recoveredSum);
+        console.log(totalDeaths);
         for (var i=0; i<data.length; i++) {
           if (!data[i].recovered)
             data[i].recovered = "an unidentified amount of";
