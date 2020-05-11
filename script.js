@@ -46,7 +46,6 @@ function initMap() {
             for (var i=1; i<11; i++) {
               document.getElementById("state"+i).innerHTML = data[findWithAttr(data, 'positive', sortedCases[i-1])].state + ' - ' + String(sortedCases[i-1]).replace(/(.)(?=(\d{3})+$)/g, '$1,');
             }
-            document.getElementById("update").innerHTML = 'Data was last fetched at ' + data[55].lastUpdateEt + ' from https://covidtracking.com'
             var markers = [{
                     state:data[1],
                     coords: {
@@ -468,12 +467,12 @@ function initMap() {
                 if (scale < 5) scale+=10
                 if (scale > 100) scale -= 60;
                 if (scale > 50) scale -= 10;
-                console.log(scale);
                 var marker = new google.maps.Marker({
                     position: props.coords,
                     map: map,
                     icon: {url:'icon.png', scaledSize: new google.maps.Size(scale,scale)},
-                    animation:google.maps.Animation.DROP
+                    animation:google.maps.Animation.DROP,
+                    id:props.state
                 });
 
 
@@ -490,13 +489,9 @@ function initMap() {
                     });
 
                     marker.addListener('click', function() {
+                        console.log(marker);
                         infoWindow.open(map, marker);
-                    });
-                    //Wait before user moves their cursor
-                    marker.addListener('mouseout', function() {
-                        setTimeout(() => {
-                            infoWindow.close(map, marker);
-                        }, 5000);
+                        document.getElementById("update").innerHTML = 'Data last updated for ' + marker.id.state + ' at ' + marker.id.lastUpdateEt + ' from https://covidtracking.com ';
                     });
                 }
             }
