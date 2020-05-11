@@ -1,13 +1,22 @@
 body
 {
-    background-color: #003399;
+    background-color: #3ea1c2;
+
+}
+
+table, th, td {
+  border: 3px solid black;
+  border-collapse: collapse;
+  font-family: "Courier New";
+  color:black;
+  font-weight: bold;
 
 }
 
 .title
 {
-    color: white;
-    font-family: Barlow;
+    color: blue;
+    font-family: 'Courier New';
     text-decoration: underline overline;
     margin-top: 15px;
     margin-left: 10px;
@@ -16,17 +25,37 @@ body
 
 #positive
 {
-  color:red;
+  font-family: 'Courier New';
+  color:white;
   margin-top: 40px;
+  margin-left: 10px;
+
+}
+
+#recovered
+{
+  font-family: 'Courier New';
+  color:#66ff00;
+  margin-top: 40px;
+  margin-left: 10px;
+
+}
+
+#deaths
+{
+  font-family: 'Courier New';
+  color:red;
+  margin-top:40px;
   margin-left: 10px;
 
 }
 
 #map
 {
-    position: relative;
+    position: absolute;
+    border:5px solid black;
     left:25%;
-    top:100px;
+    top:200px;
     height:400px;
     width:50%;
 }
