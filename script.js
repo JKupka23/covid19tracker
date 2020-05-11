@@ -14,7 +14,7 @@ function initMap() {
             var positiveSum = 0;
             var recoveredSum = 0;
             var totalDeaths = 0;
-            for (var i = 0; i < 50; i++) {
+            for (var i = 0; i < data.length; i++) {
                 positiveSum += data[i].positive;
                 recoveredSum += data[i].recovered;
                 totalDeaths += data[i].death;
@@ -97,7 +97,7 @@ function initMap() {
                 },
                 {
                     coords: {
-                        lat: 39.3185,
+                        lat: 38.900,
                         lng: -75.5071
                     },
                     content: "<h1>Delaware</h1>" + "<h2>Confirmed: " + data[8].positive + "</h2>" + " <h2>Deaths: " + data[8].death + "</h2>" + " <h2>Recoveries: " + data[8].recovered + "</h2>"
@@ -415,7 +415,8 @@ function initMap() {
             function addMarker(props) {
                 var marker = new google.maps.Marker({
                     position: props.coords,
-                    map: map
+                    map: map,
+                    icon: {url:'icon.png', scaledSize: new google.maps.Size(40, 40)}
                 });
 
 

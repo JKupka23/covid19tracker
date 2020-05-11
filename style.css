@@ -1,7 +1,6 @@
 body
 {
     background-color: #3ea1c2;
-
 }
 
 table, th, td {
@@ -10,9 +9,10 @@ table, th, td {
   font-family: "Courier New";
   color:black;
   font-weight: bold;
-
 }
-
+th,td {
+  padding:5px;
+}
 .title
 {
     color: blue;
@@ -22,7 +22,6 @@ table, th, td {
     margin-left: 10px;
     margin-bottom: 15px;
 }
-
 #positive
 {
   font-family: 'Courier New';
