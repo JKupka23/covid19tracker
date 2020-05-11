@@ -1,13 +1,13 @@
 body
 {
-    background-color: #3ea1c2;
+    background-color: #3877a8;
 }
 
 table, th, td {
-  border: 3px solid black;
+  border: 5px solid black;
   border-collapse: collapse;
   font-family: "Courier New";
-  color:black;
+  color:white;
   font-weight: bold;
 }
 th,td {
@@ -21,6 +21,13 @@ th,td {
     margin-top: 15px;
     margin-left: 10px;
     margin-bottom: 15px;
+}
+#update
+{
+  font-family: 'Courier New';
+  color:white;
+  margin-top: 40px;
+  margin-left: 10px;
 }
 #positive
 {
@@ -40,10 +47,19 @@ th,td {
 
 }
 
+#state1
+{
+  color:white;
+}
+#update
+{
+  color:blue;
+}
+
 #deaths
 {
   font-family: 'Courier New';
-  color:red;
+  color:black;
   margin-top:40px;
   margin-left: 10px;
 
