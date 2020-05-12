@@ -27,6 +27,7 @@ function initMap() {
                 }
                 return -1;
             }
+            console.log(data);
             //Get the important data (positive, negative, recovered)
             document.getElementById("positive").innerHTML = 'Total confirmed cases in the US: ' + String(positiveSum).replace(/(.)(?=(\d{3})+$)/g, '$1,');
             document.getElementById("recovered").innerHTML = 'Recovered: ' + String(recoveredSum).replace(/(.)(?=(\d{3})+$)/g, '$1,');
@@ -453,6 +454,46 @@ function initMap() {
                         lng: -107.3025
                     },
                     content: "<h1>Wyoming</h1>" + "<h2>Confirmed: " + data[50].positive + "</h2>" + " <h2>Deaths: " + data[50].death + "</h2>" + " <h2>Recoveries: " + data[50].recovered + "</h2>"
+                },
+                {
+                    state:data[51],
+                    coords: {
+                        lat: 18.2208,
+                        lng: -66.5901
+                    },
+                    content: "<h1>Puerto Rico</h1>" + "<h2>Confirmed: " + data[51].positive + "</h2>" + " <h2>Deaths: " + data[51].death + "</h2>" + " <h2>Recoveries: " + data[51].recovered + "</h2>"
+                },
+                {
+                    state:data[52],
+                    coords: {
+                        lat: -14.3064071,
+                        lng: -170.6950175
+                    },
+                    content: "<h1>American Somoa</h1>" + "<h2>Confirmed: " + data[52].positive + "</h2>" + " <h2>Deaths: " + data[52].death + "</h2>" + " <h2>Recoveries: " + data[52].recovered + "</h2>"
+                },
+                {
+                    state:data[53],
+                    coords: {
+                        lat: 13.4443,
+                        lng: 144.7937
+                    },
+                    content: "<h1>Guam</h1>" + "<h2>Confirmed: " + data[53].positive + "</h2>" + " <h2>Deaths: " + data[53].death + "</h2>" + " <h2>Recoveries: " + data[53].recovered + "</h2>"
+                },
+                {
+                    state:data[54],
+                    coords: {
+                        lat: 15.1063896,
+                        lng: 145.7065244
+                    },
+                    content: "<h1>Northern Mariana Islands</h1>" + "<h2>Confirmed: " + data[54].positive + "</h2>" + " <h2>Deaths: " + data[54].death + "</h2>" + " <h2>Recoveries: " + data[54].recovered + "</h2>"
+                },
+                {
+                    state:data[55],
+                    coords: {
+                        lat: 18.3434415,
+                        lng:-64.8671634
+                    },
+                    content: "<h1>Virgin Islands (U.S.)</h1>" + "<h2>Confirmed: " + data[55].positive + "</h2>" + " <h2>Deaths: " + data[55].death + "</h2>" + " <h2>Recoveries: " + data[55].recovered + "</h2>"
                 }
             ];
 
