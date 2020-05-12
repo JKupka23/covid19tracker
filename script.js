@@ -27,7 +27,6 @@ function initMap() {
                 }
                 return -1;
             }
-            console.log(data);
             //Get the important data (positive, negative, recovered)
             document.getElementById("positive").innerHTML = 'Total confirmed cases in the US: ' + String(positiveSum).replace(/(.)(?=(\d{3})+$)/g, '$1,');
             document.getElementById("recovered").innerHTML = 'Recovered: ' + String(recoveredSum).replace(/(.)(?=(\d{3})+$)/g, '$1,');
@@ -530,7 +529,6 @@ function initMap() {
                     });
 
                     marker.addListener('click', function() {
-                        console.log(marker);
                         infoWindow.open(map, marker);
                         document.getElementById("update").innerHTML = 'Data last updated for ' + marker.id.state + ' at ' + marker.id.lastUpdateEt + ' from https://covidtracking.com ';
                     });
